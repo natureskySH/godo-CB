@@ -10,11 +10,14 @@ node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
 .npm/
+.vite/
 
 # 빌드 산출물 (배포 단계에 GitHub Actions에서 새로 빌드)
 dist/
 build/
+coverage/
 
 # OS
 .DS_Store
@@ -28,9 +31,15 @@ Thumbs.db
 
 # 임시
 .playwright-cli/
+playwright-report/
+test-results/
+.agents/
+.codex/
+.cache/
 tmp/
 *.tmp
 *.bak
+*.log
 
 # 기획·설계 문서 (Public repo에 노출 금지 — 내부 문서)
 설계-워크플로우.md

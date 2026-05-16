@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>고도 챗봇 위젯 데모</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        min-height: 100vh;
+        margin: 0;
+        background:
+          radial-gradient(ellipse 80% 60% at 70% 30%, rgba(91, 200, 229, 0.18), transparent 60%),
+          linear-gradient(180deg, #0b1a3a 0%, #08142e 100%);
+        color: #fff;
+        font-family:
+          Pretendard,
+          -apple-system,
+          BlinkMacSystemFont,
+          'Apple SD Gothic Neo',
+          'Malgun Gothic',
+          sans-serif;
+      }
+      main {
+        max-width: 920px;
+        padding: 72px 28px;
+      }
+      h1 {
+        margin: 0 0 18px;
+        font-size: clamp(44px, 8vw, 84px);
+        font-weight: 500;
+        letter-spacing: -0.04em;
+        line-height: 1.05;
+      }
+      p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.78);
+        font-size: 18px;
+        line-height: 1.7;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>미대입시<br />합격신화</h1>
+      <p>강남고도미술학원 홈페이지 우하단 위젯 임베드 검수용 데모 페이지입니다.</p>
+    </main>
+    <script src="../dist/godo-chatbot.js?v=20260516-7" defer></script>
+  </body>
+</html>

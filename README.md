@@ -57,4 +57,23 @@
 
 ## 개발자 문서
 
+### 로컬 검증
+
+```bash
+npm install
+npm run build
+npm run typecheck
+npm run lint
+```
+
+빌드 후 `dist/godo-chatbot.js`와 `dist/chips.json`이 생성됩니다. `demo/index.html`을 브라우저에서 열면 `<script>` 한 줄 임베드 상태를 확인할 수 있습니다.
+
+### 홈페이지 임베드
+
+GitHub Pages 배포 후 홈페이지에는 아래 한 줄만 추가합니다.
+
+```html
+<script src="https://<user>.github.io/<repo>/godo-chatbot.js" defer></script>
+```
+
 상세 사양·아키텍처 문서는 별도 보관됩니다. 구현 관련 문의는 관리자에게 요청.
