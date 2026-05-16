@@ -23,6 +23,7 @@ jobs:
       - run: cp index.html dist/index.html
       - run: mkdir -p dist/demo
       - run: cp demo/*.html dist/demo/
+      - run: cp -R demo/godoart-static dist/demo/godoart-static
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
