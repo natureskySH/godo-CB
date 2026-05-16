@@ -1,5 +1,5 @@
 import type { Chip } from '../data/types';
-import { CLOSE_ICON, MEGAPHONE_ICON, ROBOT_ICON } from './icons';
+import { CHATBOT_AVATAR, CLOSE_ICON, MEGAPHONE_ICON } from './icons';
 import { markdownToSafeHtml } from './markdown';
 import { BRAND, FONT_CSS } from './styles/tokens.css';
 
@@ -57,11 +57,11 @@ export class GodoPanelElement extends HTMLElement {
       : [{ type: 'greeting' } satisfies PanelTurn];
     this.root.innerHTML = `
       <style>${FONT_CSS}${styles}</style>
-      <section class="panel" role="dialog" aria-label="고도 봇" aria-modal="false">
+      <section class="panel" role="dialog" aria-label="강남고도미술학원 챗봇" aria-modal="false">
         <header class="head">
           <div class="head-left">
-            <span class="avatar">${ROBOT_ICON}</span>
-            <strong>고도 봇</strong>
+            <span class="avatar">${CHATBOT_AVATAR}</span>
+            <strong>강남고도미술학원</strong>
           </div>
           <button class="close" type="button" aria-label="챗봇 닫기">${CLOSE_ICON}</button>
         </header>
@@ -136,8 +136,8 @@ export class GodoPanelElement extends HTMLElement {
 
   private renderTyping(): string {
     return `
-      <div class="typing" aria-label="고도 봇이 답변을 준비 중입니다">
-        <span class="typing-avatar">${ROBOT_ICON}</span>
+      <div class="typing" aria-label="강남고도미술학원이 답변을 준비 중입니다">
+        <span class="typing-avatar">${CHATBOT_AVATAR}</span>
         <span class="typing-loader" aria-hidden="true"><span></span></span>
       </div>
     `;
@@ -206,7 +206,7 @@ function renderChip(chip: Chip, kind: string, label = chip.label, badge?: string
 }
 
 function renderBotSig(): string {
-  return `<div class="bot-sig"><span>${ROBOT_ICON}</span>고도 봇(bot)</div>`;
+  return `<div class="bot-sig"><span>${CHATBOT_AVATAR}</span>강남고도미술학원(bot)</div>`;
 }
 
 function attr(value: string): string {
@@ -222,7 +222,10 @@ const styles = `
 .head { height: 60px; flex: 0 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 14px; border-bottom: 1px solid ${BRAND.bubbleBorder}; background: #fff; }
 .head-left { display: flex; align-items: center; gap: 10px; }
 .head strong { color: ${BRAND.ink}; font-size: 16px; font-weight: 700; letter-spacing: -0.025em; }
-.avatar { width: 36px; height: 36px; border-radius: 50%; background: ${BRAND.primary}; color: #fff; display: inline-flex; align-items: center; justify-content: center; }
+.avatar { width: 36px; height: 36px; border-radius: 50%; background: ${BRAND.primary}; color: #fff; display: inline-flex; align-items: center; justify-content: center; overflow: hidden; }
+.avatar .chatbot-avatar-img,
+.typing-avatar .chatbot-avatar-img,
+.bot-sig .chatbot-avatar-img { width: 100%; height: 100%; border-radius: inherit; display: block; object-fit: cover; }
 .close { width: 36px; height: 36px; border: 0; border-radius: 8px; background: transparent; color: ${BRAND.inkSoft}; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; }
 .close:hover { background: ${BRAND.surfaceTint}; }
 .close:focus-visible { outline: 3px solid ${BRAND.primarySoft}; }
@@ -237,8 +240,7 @@ h2 span { color: ${BRAND.accentDeep}; }
 .chips { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; margin-left: auto; max-width: 86%; }
 .chips.follow { align-items: flex-end; flex-direction: column; margin: 0 0 18px auto; }
 .bot-sig { display: inline-flex; align-items: center; gap: 7px; color: ${BRAND.inkMuted}; font-size: 13px; letter-spacing: -0.02em; margin: 12px 0 24px; }
-.bot-sig span { width: 20px; height: 20px; border-radius: 50%; background: ${BRAND.primary}; color: ${BRAND.accent}; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
-.bot-sig svg { width: 11px; height: 11px; }
+.bot-sig span { width: 20px; height: 20px; border-radius: 50%; background: ${BRAND.primary}; color: ${BRAND.accent}; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; overflow: hidden; }
 .answer { color: ${BRAND.ink}; font-size: 15px; letter-spacing: -0.025em; line-height: 1.7; margin: 0; word-break: keep-all; }
 .answer h4 { color: ${BRAND.accentDeep}; display: flex; align-items: center; gap: 8px; font-size: 19px; font-weight: 800; letter-spacing: -0.035em; line-height: 1.35; margin: 0 0 14px; }
 .answer p { margin: 0 0 14px; }
@@ -247,8 +249,7 @@ h2 span { color: ${BRAND.accentDeep}; }
 .answer li { margin-bottom: 8px; padding-left: 20px; position: relative; }
 .answer li::before { content: ''; position: absolute; left: 4px; top: 11px; width: 6px; height: 6px; border-radius: 50%; background: ${BRAND.ink}; }
 .typing { align-items: center; display: inline-flex; gap: 8px; margin: 0 0 18px; }
-.typing-avatar { width: 24px; height: 24px; border-radius: 50%; background: ${BRAND.primary}; color: ${BRAND.accent}; display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; }
-.typing-avatar svg { width: 14px; height: 14px; }
+.typing-avatar { width: 24px; height: 24px; border-radius: 50%; background: ${BRAND.primary}; color: ${BRAND.accent}; display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; overflow: hidden; }
 .typing-loader { align-items: center; background: ${BRAND.bubble}; border: 1px solid ${BRAND.bubbleBorder}; border-radius: 16px; display: inline-flex; height: 28px; justify-content: center; padding: 0 14px; }
 .typing-loader span,
 .typing-loader span::before,

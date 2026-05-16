@@ -2,7 +2,7 @@ import { handleChipAction } from '../business/action-handler';
 import { ChipRouter } from '../business/chip-router';
 import { StateMachine } from '../business/state-machine';
 import type { Chip } from '../data/types';
-import { CALENDAR_ICON, CLOSE_ICON, PHONE_ICON, ROBOT_ICON } from './icons';
+import { CALENDAR_ICON, CHATBOT_AVATAR, CLOSE_ICON, PHONE_ICON } from './icons';
 import type { GodoPanelElement, PanelTurn } from './panel-element';
 import { FONT_CSS } from './styles/tokens.css';
 import { WIDGET_STYLES } from './styles/widget.css';
@@ -79,13 +79,12 @@ export class GodoWidgetElement extends HTMLElement {
   private renderTrigger(): string {
     return `
       <div class="trigger" aria-label="고도 챗봇 빠른 메뉴">
-        <button class="trigger-item chat accent" type="button" aria-label="챗봇 열기">
-          <span class="trigger-icon">${ROBOT_ICON}</span><span class="trigger-label">챗봇</span>
+        <button class="trigger-item chat" type="button" aria-label="챗봇 열기">
+          <span class="trigger-icon">${CHATBOT_AVATAR}</span>
         </button>
         <button class="trigger-item consult" type="button" aria-label="상담 예약">
-          <span class="trigger-icon">${CALENDAR_ICON}</span><span class="trigger-label">상담<br>예약</span>
+          <span class="trigger-icon">${CALENDAR_ICON}</span>
         </button>
-        <span class="divider"></span>
         <button class="trigger-item phone" type="button" aria-label="전화 연결">
           <span class="trigger-icon">${PHONE_ICON}</span>
         </button>
@@ -98,10 +97,10 @@ export class GodoWidgetElement extends HTMLElement {
       <div class="notification" role="status">
         <button class="nb-close" type="button" aria-label="알림 닫기">${CLOSE_ICON}</button>
         <div class="nb-row">
-          <span class="nb-avatar">${ROBOT_ICON}</span>
           <span class="nb-content">
-            <span class="nb-msg"><strong>미대입시</strong> 궁금하신가요?</span>
-            <span class="nb-live"><span></span>상담 예약 진행 중</span>
+            <span class="nb-msg">
+              <span class="nb-msg-main"><strong>미대입시</strong> 궁금하신가요?</span>
+            </span>
           </span>
         </div>
         <span class="nb-tail"></span>

@@ -1,13 +1,11 @@
-export const ROBOT_ICON = `
-<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-  <rect x="4" y="7" width="16" height="12" rx="3"></rect>
-  <circle cx="9" cy="13" r="1.4" fill="currentColor" stroke="none"></circle>
-  <circle cx="15" cy="13" r="1.4" fill="currentColor" stroke="none"></circle>
-  <path d="M12 3v4"></path>
-  <circle cx="12" cy="2.5" r="1" fill="currentColor" stroke="none"></circle>
-  <path d="M2 13h2M20 13h2"></path>
-  <path d="M9.5 16.5h5"></path>
-</svg>`;
+const currentScriptSrc =
+  document.currentScript instanceof HTMLScriptElement
+    ? document.currentScript.src
+    : window.location.href;
+
+const CHATBOT_AVATAR_URL = new URL('chatbot-avatar.png', currentScriptSrc).toString();
+
+export const CHATBOT_AVATAR = `<img class="chatbot-avatar-img" src="${CHATBOT_AVATAR_URL}" alt="" aria-hidden="true" decoding="async" />`;
 
 export const PHONE_ICON = `
 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -30,7 +28,7 @@ export const SPARKLE_ICON = `
 </svg>`;
 
 export const CALENDAR_ICON = `
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
   <rect x="3.5" y="5" width="17" height="15" rx="2.5"></rect>
   <path d="M8 3v4M16 3v4M3.5 10h17"></path>
 </svg>`;
