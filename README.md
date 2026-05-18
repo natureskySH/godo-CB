@@ -83,7 +83,8 @@ npm run format
 
 개발 서버 실행 후 아래 주소에서 확인합니다.
 
-- 기본 데모: `http://127.0.0.1:5173/demo/index.html`
+- 실제 홈페이지 정적 복제 검수: `http://127.0.0.1:5173/demo/godoart-static.html`
+- 간단 위젯 검수: `http://127.0.0.1:5173/demo/index.html`
 - 실제 홈페이지 iframe 검수: `http://127.0.0.1:5173/demo/godoart-live.html`
 
 `demo/godoart-live.html`은 실제 `http://www.godoart.com/default/index.php`를 iframe으로 띄우는 로컬 검수용입니다. GitHub Pages처럼 HTTPS로 제공되는 페이지에서는 브라우저의 mixed content 정책 때문에 iframe이 차단될 수 있습니다.
@@ -99,7 +100,7 @@ npm run format
 GitHub Pages 배포 후 홈페이지에는 아래 한 줄만 추가합니다.
 
 ```html
-<script src="https://helen13566-netizen.github.io/godo-CB/godo-chatbot.js" defer></script>
+<script src="https://natureskysh.github.io/godo-CB/godo-chatbot.js" defer></script>
 ```
 
 위젯은 스크립트 파일 위치를 기준으로 `chips.json`과 `chatbot-avatar.png`를 불러옵니다. 따라서 세 파일은 같은 배포 경로에 있어야 합니다.
